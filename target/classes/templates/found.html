@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:th="http://www.thymeleaf.org">
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-	<title>Academica - Learning Page Template</title>
+	<title>Lost & Found - </title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Academica Learning Page Template">
 	<meta name="keywords" content="academica, unica, creative, html">
@@ -35,13 +36,14 @@
 	
 	<!-- Header section -->
 	<div th:insert="header.html :: head"></div>
+
 	<!-- Header section end -->
 
 
 	<!-- Page top section -->
 	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
 		<div class="container text-white">
-			<h3>About us</h3>
+			<h3>Found items</h3>
 		</div>
 	</section>
 	<!--  Page top end -->
@@ -51,13 +53,13 @@
 	<section class="multi-search-section">
 		<div class="msf-warp">
 			<div class="container">
-				<h5>Search your Course</h5>
+				<h5>Search your item here...</h5>
 				<form class="multi-search-form">
-					<input type="text" placeholder="Course">
-					<input type="text" placeholder="Level">
+					<input type="text" placeholder="Title">
+					<input type="text" placeholder="ID number">
 					<input type="text" placeholder="Date">
-					<input type="text" placeholder="Teacher">
-					<input type="text" placeholder="Price">
+					<input type="text" placeholder="Place">
+					<input type="text" placeholder="City">
 					<button class="site-btn">Search <i class="fa fa-angle-right"></i></button>
 				</form>
 			</div>
@@ -65,49 +67,48 @@
 	</section>
 	<!-- Search section end -->
 
+	
 
-	<!-- Contact section -->
-	<section class="contact-section spad">
+	<!-- Courses section  -->
+	<section class="courses-section spad">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 contact-text">
-					<h3>Stay in touch</h3>
-					<p>Donec molestie tincidunt tellus sit amet aliquet. Proin auctor nisi ut purus eleifend, et auctor lorem hendrerit. Proin vitae tortor nec risus tristique efficitur. Aliquam luctus est urna, id aliquam orci tempus sed. Aenean sit amet leo id enim dapibus eleifend.</p>
-					<ul class="contact-info">
-						<li><span>Address:</span>1481 Creekside Lane Avila Beach, CA 931</li>
-						<li><span>Phone:</span>+53 345 7953 32453</li>
-						<li><span>Email:</span>yourmail@gmail.com</li>
-					</ul>
-				</div>
-				<div class="col-lg-8">
-					<form class="contact-form">
-						<div class="row">
-							<div class="col-md-12">
-								<input type="text" placeholder="Your Name">
-							</div>
-							<div class="col-md-6">
-								<input type="text" placeholder="Your E-mail">
-							</div>
-							<div class="col-md-6">
-								<input type="text" placeholder="Subject">
-							</div>
-							<div class="col-md-12">
-								<textarea placeholder="Message"></textarea>
-								<button class="site-btn">Send <i class="fa fa-angle-right"></i></button>
+			<div class="sec-title text-center">
+				<span></span>
+				<h2>List of found things</h2>
+			</div>
+			<div class="row courses-page">
+
+				<!-- course -->
+				<div class="col-lg-4 col-md-2" th:each="obj:${objects}" >
+					<div class="course-item">
+						<div class="seller-info">
+							<h6>By Kurmanbekova Elmira <span></span></h6>
+							<hr/>
+							<span> on </span>
+							<span th:text="${obj.date}">
+								</span>
+						</div>
+						<figure class="course-preview">
+							<img src="img/courses/1.jpg" alt="">
+						</figure>
+						<div class="course-content">
+							<div class="cc-text">
+								<h5 th:text="${obj.title}">Italian for Begginers & Advanced Course</h5>
+								<p th:text="${obj.description}">Donec molestie tincidunt tellus sit amet aliquet. Proin auctor nisi ut purus eleifend, et auctor lorem hendrerit. </p>
 							</div>
 						</div>
-					</form>
+					</div>
 				</div>
+
 			</div>
 		</div>
 	</section>
-	<!-- Contact section end -->
+	<!-- Courses section end -->
 
-	<!-- map -->
-	<div class="location-map" id="map-canvas"></div>
 
 	<!-- Footer section -->
 	<div th:insert="footer.html :: foot"></div>
+
 	<!-- Footer section end -->
 
 
@@ -117,11 +118,6 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/circle-progress.min.js"></script>
 	<script src="js/main.js"></script>
-
-
-	<!-- load for map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YyDTa0qqOjIerob2VTIwo_XVMhrruxo"></script>
-	<script src="js/map.js"></script>
 
 
 </body>

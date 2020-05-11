@@ -26,15 +26,30 @@ public class MainController {
         return "login";
     }
 
-    @RequestMapping("/events")
-    public String blog(){
-        return "blog";
+//    @RequestMapping("/events")
+//    public String blog(){
+//        return "blog";
+//    }
+
+    @RequestMapping("/about")
+    public String about(){
+        return "about";
+    }
+
+    @RequestMapping("/contact")
+    public String contact(){
+        return "contact";
+    }
+
+    @RequestMapping("/lostForm")
+    public String lostForm(){
+        return "lostForm";
     }
 
     @RequestMapping("/objects")
     public String found(Model model) {
         model.addAttribute("objects", objectRepository.findByStatus("found"));
-        return "courses";
+        return "found";
     }
     @RequestMapping("/lostObjects")
     public String lost(Model model) {
