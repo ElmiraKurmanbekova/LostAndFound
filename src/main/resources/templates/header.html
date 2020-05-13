@@ -14,7 +14,8 @@
     				<a th:href="@{/login}"  href="#">Login</a><span>/</span><a th:href="@{/registration}">Register</a>
     			</div>
     			<div class="user-panel" th:if="${#request.userPrincipal != null}">
-    				<a th:href="@{/logout}">Logout</a>
+    				<a th:href="@{/lostForm}">Add an announcement </a><span>/</span>
+				<a th:href="@{/logout}"> Logout </a>
     			</div>
     			<div class="nav-switch">
     				<i class="fa fa-bars"></i>
