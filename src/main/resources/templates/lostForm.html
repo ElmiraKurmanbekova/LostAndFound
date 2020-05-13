@@ -53,12 +53,14 @@
 <div class="form-style-5">
     <form>
         <fieldset>
-            <legend><span class="number">1</span> Fill the form </legend>
-            <input type="radio" name="choice" value="lost" >I lost something
-            <input type="radio" name="choice" value="found" checked>I found something <br><br>
-            <legend><span class="number">2</span> Description </legend>
-            <textarea name="field3" placeholder="Where did you find it ? ..."></textarea>
-            <legend><span class="number">3</span> Category </legend>
+              <legend><span class="number">1</span> Fill the form </legend>
+            <input type="radio" name="choice" value="lost"><span style="font-size: 20px;">I lost something &emsp;</span>
+            <input type="radio" name="choice" value="found" checked><span style="font-size: 20px;">I found something</span><br><br>
+            <legend><span class="number">2</span> Title </legend>
+            <input type="text" name="field1" placeholder="What did you find? ..."> </input>
+            <legend><span class="number">3</span> Description </legend>
+            <textarea name="field2" placeholder="Where did you find it ? ..."></textarea>
+            <legend><span class="number">4</span> Category </legend>
             <select id="category" name="field4">
                     <option value="docs">Documents</option>
                     <option value="device">Electronics</option>
@@ -66,6 +68,9 @@
                     <option value="debate">Personal Materials</option>
                     <option value="gaming">Others</option>
                 </select>
+            <legend><span class="number">5</span> Upload an image </legend>
+            <input type="file" name="img" accept="image/.*">
+            <br><br>
         </fieldset>
         <input type="submit" value="Apply" />
     </form>
