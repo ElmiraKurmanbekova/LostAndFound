@@ -58,6 +58,11 @@ public class MainController {
         return "lostForm";
     }
 
+    @RequestMapping("/singleItem")
+    public String singleItem(){
+        return "item";
+    }
+
     @RequestMapping("/objects")
     public String found(Model model) {
         model.addAttribute("objects", objectRepository.findByStatus("found"));
