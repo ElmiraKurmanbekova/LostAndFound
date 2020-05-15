@@ -975,13 +975,23 @@ ol {
 /*------------------
   About section
 ---------------------*/
+.about-section{
+	background-image: url(../img/back.jpg);
+	background-repeat: no-repeat;
+	text-align: center;
+	padding-left: 10%;
+
+}
 
 .about-text h3 {
 	margin-bottom: 40px;
+	padding-left: 10%;
 }
 
 .about-text p {
 	margin-bottom: 20px;
+	margin-left: 20%;
+
 }
 
 .about-text .site-btn {
