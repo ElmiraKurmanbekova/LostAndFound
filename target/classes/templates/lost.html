@@ -81,15 +81,15 @@
 				<div class="col-lg-4 col-md-6" th:each="obj:${objects}" >
 					<div class="course-item">
 						<figure class="course-preview">
-							<img src="img/courses/1.jpg" alt="">
+							<img  th:src="@{${obj.getImage()}}" alt="">
 						</figure>
 						<div class="course-content">
 							<div class="cc-text">
-								<h5 th:text="${obj.title}">Italian for Begginers & Advanced Course</h5>
-								<p th:text="${obj.description}">Donec molestie tincidunt tellus sit amet aliquet. Proin auctor nisi ut purus eleifend, et auctor lorem hendrerit. </p>
+								<h5 th:text="${obj.title}"></h5>
+								<p th:text="${obj.description}"> </p>
 							</div>
 							<div class="seller-info">
-								<h6>By Kurmanbekova Elmira <span></span></h6>
+								<h6 th:text="${obj.user.surname} + ' ' + ${obj.user.name}"></h6>
 								<hr/>
 								<span class="text-white"> on </span>
 								<span th:text="${obj.date}" class="text-white"></span>

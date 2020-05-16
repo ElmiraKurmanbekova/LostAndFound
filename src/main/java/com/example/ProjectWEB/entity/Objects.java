@@ -1,5 +1,8 @@
 package com.example.ProjectWEB.entity;
 
+import com.example.ProjectWEB.enums.Category;
+import com.example.ProjectWEB.enums.Status;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -16,17 +19,32 @@ public class Objects {
     private String title;
 
     @Column(name = "status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "category")
-    private String category;
+    @Column(name = "category", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Category category;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date", nullable = false)
     private Date date;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    private String fileName;
+
+    public String getImage(){
+        return "/image/"+fileName;
+    }
+
+    public Objects() {
+    }
 
     public long getId() {
         return id;
@@ -44,19 +62,19 @@ public class Objects {
         this.title = title;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
-    public String getCategory() {
+    public Status getStatus() {
+        return status;
+    }
+
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
@@ -74,5 +92,21 @@ public class Objects {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

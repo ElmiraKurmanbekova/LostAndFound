@@ -14,7 +14,7 @@ public class User {
     private int id;
 
     @Column(name = "student_id")
-    private long student_id;
+    private Long studentId;
 
     @Column(name = "name")
     private String name;
@@ -32,8 +32,8 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "phonenumber")
-    private String phonenumber;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
     @ManyToMany(cascade = CascadeType.DETACH )
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -42,7 +42,7 @@ public class User {
     public User(String name, String surname, String phonenumber) {
         this.name = name;
         this.surname = surname;
-        this.phonenumber = phonenumber;
+        this.phoneNumber = phonenumber;
     }
 
     public User() {
@@ -64,12 +64,12 @@ public class User {
         this.id = id;
     }
 
-    public long getStudent_id() {
-        return student_id;
+    public Long getStudentId() {
+        return studentId;
     }
 
-    public void setStudent_id(long student_id) {
-        this.student_id = student_id;
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
     }
 
     public String getName() {
@@ -104,12 +104,12 @@ public class User {
         this.password = password;
     }
 
-    public String getPhonenumber() {
-        return phonenumber;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public Set<Role> getRoles() {
