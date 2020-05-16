@@ -79,14 +79,14 @@
 
 				<!-- course -->
 				<div class="col-lg-4 col-md-6" th:each="obj:${objects}" >
-					<div class="course-item">
+					<div class="course-item"><span class="badge badge-danger" style="float: right; padding: 3%; font-size: 80%;">LOST</span>
 						<figure class="course-preview">
 							<img  th:src="@{${obj.getImage()}}" style="max-width: 60%" alt="">
 						</figure>
 						<div class="course-content">
 							<div class="cc-text">
 								<h5 th:text="${obj.title}"></h5>
-								<p th:text="${obj.description}"> </p>
+								<p th:text="${obj.description}" class="text-dark"> </p>
 							</div>
 							<div class="seller-info">
 								<p th:text="${obj.user.surname} + ' ' + ${obj.user.name}"></p>
