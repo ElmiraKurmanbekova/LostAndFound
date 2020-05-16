@@ -975,13 +975,26 @@ ol {
 /*------------------
   About section
 ---------------------*/
+.about-section{
+	background-image: url(../img/back.jpg);
+	background-repeat: no-repeat;
+	text-align: center;
+	padding-left: 10%;
+
+}
 
 .about-text h3 {
 	margin-bottom: 40px;
+	padding-left: 10%;
 }
 
 .about-text p {
 	margin-bottom: 20px;
+	margin-left: 20%;
+	color: #020245 !important;
+
+
+
 }
 
 .about-text .site-btn {
@@ -1399,6 +1412,10 @@ ol {
 /*------------------
   Contact section
 ---------------------*/
+.contact-info{
+	padding-left: 30px;
+	margin-top: 50px;
+}
 
 .contact-text h3 {
 	margin-bottom: 30px;
@@ -1424,7 +1441,7 @@ ol {
 	font-weight: 700;
 	text-transform: uppercase;
 	color: #1d1d1d;
-	margin-right: 15px;
+	margin-right: 20px;
 }
 
 .contact-form {
@@ -1454,7 +1471,9 @@ ol {
 }
 
 .location-map {
-	height: 692px;
+	height: 350px;
+	width: 300px;
+	margin-left: 40px;
 	background: #ddd;
 }
 
