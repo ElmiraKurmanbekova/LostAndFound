@@ -50,8 +50,14 @@
 					<!--<a href="#" class="site-btn">I lost something<i class="fa fa-angle-right"></i></a>
                     <a href="#" class="site-btn">I found something<i class="fa fa-angle-right"></i></a>
             -->
-					<a th:href="@{/lostForm}" class="btn btn-lg btn-primary">Add lost or found item </a>
+<!--					<a th:href="@{/lostForm}" class="btn btn-lg btn-primary">Add lost or found item </a>-->
 					<!--<a th:href="@{/foundForm}" class="mainButton">I found something</a>-->
+
+					<a th:if="${#request.userPrincipal == null}" th:href="@{/login}" class="btn btn-lg btn-primary">Add lost or found item </a>
+
+					<a th:if="${#request.userPrincipal != null}" th:href="@{/lostForm}" class="btn btn-lg btn-primary">Add lost or found item </a>
+
+
 				</div>
 			</div>
 		</div>
