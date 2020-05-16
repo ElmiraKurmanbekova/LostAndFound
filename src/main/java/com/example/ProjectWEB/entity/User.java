@@ -13,7 +13,7 @@ public class User {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "studentId")
+    @Column(name = "student_id")
     private Long studentId;
 
     @Column(name = "name")
@@ -64,11 +64,11 @@ public class User {
         this.id = id;
     }
 
-    public long getStudentId() {
+    public Long getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(long studentId) {
+    public void setStudentId(Long studentId) {
         this.studentId = studentId;
     }
 

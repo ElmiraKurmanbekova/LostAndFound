@@ -1,6 +1,7 @@
 package com.example.ProjectWEB.entity;
 
 import com.example.ProjectWEB.enums.Category;
+import com.example.ProjectWEB.enums.Status;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -18,7 +19,8 @@ public class Objects {
     private String title;
 
     @Column(name = "status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     @Column(name = "description")
     private String description;
@@ -30,6 +32,10 @@ public class Objects {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date", nullable = false)
     private Date date;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     private String fileName;
 
@@ -52,12 +58,12 @@ public class Objects {
         this.title = title;
     }
 
-    public String getStatus() {
-        return status;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public Status getStatus() {
+        return status;
     }
 
     public Category getCategory() {
@@ -90,5 +96,13 @@ public class Objects {
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
