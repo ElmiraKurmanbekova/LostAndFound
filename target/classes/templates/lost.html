@@ -81,7 +81,7 @@
 				<div class="col-lg-4 col-md-6" th:each="obj:${objects}" >
 					<div class="course-item">
 						<figure class="course-preview">
-							<img  th:src="@{${obj.getImage()}}" alt="">
+							<img  th:src="@{${obj.getImage()}}" style="max-width: 60%" alt="">
 						</figure>
 						<div class="course-content">
 							<div class="cc-text">
@@ -89,7 +89,7 @@
 								<p th:text="${obj.description}"> </p>
 							</div>
 							<div class="seller-info">
-								<h6 th:text="${obj.user.surname} + ' ' + ${obj.user.name}"></h6>
+								<p th:text="${obj.user.surname} + ' ' + ${obj.user.name}"></p>
 								<hr/>
 								<span class="text-white"> on </span>
 								<span th:text="${obj.date}" class="text-white"></span>
