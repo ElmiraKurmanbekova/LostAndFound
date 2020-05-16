@@ -51,28 +51,31 @@
     <h3>Lost / Found Form</h3>
 </div>
 <div class="form-style-5">
-    <form>
+    <form th:action="@{/object/save}" method="post" th:object="${item}" enctype="multipart/form-data">
         <fieldset>
-            <legend><span class="number">1</span> Fill the form </legend>
-            <input type="radio" name="choice" value="lost"><span style="font-size: 20px;">I lost something &emsp;</span>
-            <input type="radio" name="choice" value="found" checked><span style="font-size: 20px;">I found something</span><br><br>
+            <legend><span class="number">1</span> Status </legend>
+            <select required="required" th:field="*{status}">
+                <option th:value="null"></option>
+                <option th:each="st : ${T(com.example.ProjectWEB.enums.Status).values()}"
+                        th:value="${st}"
+                        th:text="${st}"></option>
+            </select>
             <legend><span class="number">2</span> Title </legend>
-            <input type="text" name="field1" placeholder="What did you find? ..."> </input>
+            <input type="text" required="required" th:field="*{title}" placeholder="What did you find? ..."> </input>
             <legend><span class="number">3</span> Description </legend>
-            <textarea name="field2" placeholder="Where did you find it ? ..."></textarea>
+            <textarea th:field="*{description}" required="required" placeholder="Where did you find it ? ..."></textarea>
             <legend><span class="number">4</span> Category </legend>
-            <select id="category" name="field4">
-                    <option value="docs">Documents</option>
-                    <option value="device">Electronics</option>
-                    <option value="personal_id">Personal Documents</option>
-                    <option value="debate">Personal Materials</option>
-                    <option value="gaming">Others</option>
-                </select>
+            <select required="required" th:field="*{category}">
+                <option th:value="null"></option>
+                <option th:each="st : ${T(com.example.ProjectWEB.enums.Category).values()}"
+                        th:value="${st}"
+                        th:text="${st}"></option>
+            </select>
             <legend><span class="number">5</span> Upload an image </legend>
-            <input type="file" name="img" accept="image/.*">
+            <input type="file" required="required" name="file" accept="image/.*">
             <br><br>
         </fieldset>
-        <input type="submit" value="Apply" />
+        <input type="submit" value="Submit" />
     </form>
 </div>
 

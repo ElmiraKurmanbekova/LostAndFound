@@ -44,12 +44,12 @@
 
         <!-- Login Form -->
         <form method="post" th:action="@{/registration}" th:object="${user}">
-            <input type="text"  class="fadeIn first" th:field="*{email}"  placeholder="Your E-mail">
+            <input type="email"  class="fadeIn first" th:field="*{email}"  placeholder="Your E-mail">
             <input type="text" class="fadeIn second" th:field="*{name}" placeholder="Your Name">
             <input type="text" class="fadeIn third" th:field="*{surname}" placeholder="Your Surname">
-            <input type="text" class="fadeIn fourth" th:field="*{phonenumber}" placeholder="Phone number">
-            <input type="text" class="fadeIn fifth" th:field="*{student_id}" placeholder="Student ID">
-            <input type="password" class="fadeIn sixth" th:field="*{password}" placeholder="Password">
+            <input type="number" class="fadeIn fourth" th:field="*{phoneNumber}" placeholder="Phone number">
+            <input type="number" minlength="10" class="fadeIn fifth" th:field="*{studentId}" placeholder="Student ID">
+            <input type="password" class="fadeIn sixth"  minlength="5" th:field="*{password}" placeholder="Password">
 
             <input type="submit" class="fadeIn fourth" value="Sign up">
 
@@ -91,11 +91,11 @@
 <!--                        </div>-->
 <!--                        <div class="col-md-6">-->
 <!--                            <label>Your phone number:</label>-->
-<!--                            <input type="text" th:field="*{phonenumber}" placeholder="Phone number">-->
+<!--                            <input type="text" th:field="*{phoneNumber}" placeholder="Phone number">-->
 <!--                        </div>-->
 <!--                        <div class="col-md-6">-->
 <!--                            <label>Student ID:</label>-->
-<!--                            <input type="text" th:field="*{student_id}" placeholder="Student ID">-->
+<!--                            <input type="text" th:field="*{studentId}" placeholder="Student ID">-->
 <!--                        </div>-->
 <!--                        <div class="col-md-6">-->
 <!--                            <label>Your password:</label>-->

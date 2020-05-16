@@ -13,9 +13,6 @@ public class MainController {
     @Autowired
     ObjectService objectService;
 
-    @Autowired
-    ObjectRepository objectRepository;
-
     @RequestMapping("/")
     public String index(){
         return "index";
@@ -53,25 +50,5 @@ public class MainController {
         return "contact";
     }
 
-    @RequestMapping("/lostForm")
-    public String lostForm(){
-        return "lostForm";
-    }
-
-    @RequestMapping("/singleItem")
-    public String singleItem(){
-        return "item";
-    }
-
-    @RequestMapping("/objects")
-    public String found(Model model) {
-        model.addAttribute("objects", objectRepository.findByStatus("found"));
-        return "found";
-    }
-    @RequestMapping("/lostObjects")
-    public String lost(Model model) {
-        model.addAttribute("objects", objectRepository.findByStatus("lost"));
-        return "lost";
-    }
 
 }
