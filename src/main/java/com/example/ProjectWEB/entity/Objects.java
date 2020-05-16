@@ -39,6 +39,10 @@ public class Objects {
 
     private String fileName;
 
+    public String getImage(){
+        return "/image/"+fileName;
+    }
+
     public Objects() {
     }
 
